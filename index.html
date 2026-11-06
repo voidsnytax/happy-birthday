@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17241f">
+  <meta name="description" content="A little birthday story for Purva, made with friendship, photos, and good food.">
+  <title>A little birthday surprise for Purva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="balloon-sky" id="balloon-sky" aria-hidden="true"></div>
+  <div class="celebration-ribbon celebration-ribbon--left" aria-hidden="true"></div>
+  <div class="celebration-ribbon celebration-ribbon--right" aria-hidden="true"></div>
+
+  <audio id="birthday-audio" autoplay loop preload="auto" aria-label="Soft birthday instrumental"></audio>
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Unmute birthday music">
+    <span aria-hidden="true">🎵</span>
+    <span class="music-toggle__label">Music off</span>
+    <span class="sr-only" id="music-status" aria-live="polite"></span>
+  </button>
+
+  <main>
+    <section class="intro-screen" id="intro" aria-labelledby="intro-title">
+      <div class="envelope-scene">
+        <span class="envelope-scene__sparkle envelope-scene__sparkle--one" aria-hidden="true">✦</span>
+        <span class="envelope-scene__sparkle envelope-scene__sparkle--two" aria-hidden="true">✧</span>
+        <div class="envelope" aria-hidden="true">
+          <div class="envelope__letter"><span>For Purva</span></div>
+          <div class="envelope__back"></div>
+          <div class="envelope__flap"></div>
+          <div class="envelope__front"></div>
+          <div class="envelope__seal">P</div>
+        </div>
+      </div>
+      <p class="eyebrow">A little note, just for you</p>
+      <h1 id="intro-title">There's something<br><em>for you</em></h1>
+      <p class="intro-screen__copy">A tiny birthday surprise, made just for you.</p>
+      <button class="button button--primary" id="open-surprise" type="button">💌 Open your surprise</button>
+      <span class="scroll-hint" aria-hidden="true">made with a little extra thought · scroll for the story</span>
+    </section>
+
+    <section class="lights-screen" id="lights-section" aria-labelledby="lights-title">
+      <div class="lights-screen__moon" aria-hidden="true"></div>
+      <p class="eyebrow">Before the fun begins</p>
+      <h2 id="lights-title">Shhh... The room is waiting for you.</h2>
+      <p>Someone left the lights off on purpose.</p>
+      <button class="button button--glow" id="turn-on-lights" type="button" aria-pressed="false">
+        <span aria-hidden="true">✧</span> Turn on the lights
+      </button>
+      <span class="lights-screen__hint">Psst... this is your cue.</span>
+    </section>
+
+    <section class="story-section celebration-screen" id="main-celebration" aria-labelledby="birthday-title">
+      <p class="eyebrow">Today is all about you</p>
+      <span class="birthday-badge"><span aria-hidden="true">✿</span> 7 November · Birthday girl</span>
+      <h2 id="birthday-title">Look who's having a birthday...<br><em>Happy Birthday, Purva ✨</em></h2>
+      <p class="celebration-screen__copy">Here’s to good food, zero stress, and a whole lot of laughs. Hope today is every bit as lovely as you are.</p>
+      <a class="button button--outline" href="#cake-section">Let’s get to the good stuff <span aria-hidden="true">↓</span></a>
+      <div class="celebration-screen__doodle celebration-screen__doodle--one" aria-hidden="true">✷</div>
+      <div class="celebration-screen__doodle celebration-screen__doodle--two" aria-hidden="true">♡</div>
+    </section>
+
+    <section class="story-section cake-section" id="cake-section" aria-labelledby="cake-title">
+      <p class="eyebrow">First things first</p>
+      <h2 class="section-title" id="cake-title">Make a wish. Then claim your slice.</h2>
+      <p class="section-copy">First, make a wish and blow out the candles. Then tap the cake or swipe across it to cut the first slice.</p>
+
+      <div class="wish-card">
+        <div class="wish-card__candles" aria-hidden="true">🕯️　🕯️　🕯️</div>
+        <p>Close your eyes, think of something good, and make a wish.</p>
+        <button class="button button--soft" id="make-wish" type="button">Blow out the candles <span aria-hidden="true">✧</span></button>
+        <p class="wish-card__message" id="wish-message" aria-live="polite"></p>
+      </div>
+
+      <div class="cake-stage">
+        <div class="cake" id="birthday-cake" role="button" tabindex="0" aria-label="Birthday cake. Make a wish and blow out the candles before cutting.">
+          <div class="cake__candles" aria-label="Three birthday candles">
+            <span class="candle"><span class="candle__flame"></span></span>
+            <span class="candle candle--tall"><span class="candle__flame"></span></span>
+            <span class="candle"><span class="candle__flame"></span></span>
+          </div>
+          <div class="cake__top">
+            <span class="cake__half cake__half--left"></span>
+            <span class="cake__half cake__half--right"></span>
+          </div>
+          <div class="cake__base">
+            <span class="cake__half cake__half--left"></span>
+            <span class="cake__half cake__half--right"></span>
+          </div>
+          <span class="cake__plate"></span>
+          <span class="cake__cut-mark" aria-hidden="true"></span>
+        </div>
+      </div>
+      <button class="button button--primary" id="cut-cake" type="button" disabled>Cut the cake <span aria-hidden="true">✂</span></button>
+      <p class="cake-message" id="cake-message" aria-live="polite">First, make a wish and blow out the candles.</p>
+    </section>
+
+    <section class="story-section gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <p class="eyebrow">A few favorite frames</p>
+      <h2 class="section-title" id="gallery-title">Little moments, lovely you.</h2>
+      <p class="section-copy">A mini scrapbook of greens, good outfits, and places worth remembering. Tap any photo to get a closer look.</p>
+      <div class="gallery">
+        <figure class="polaroid polaroid--tilt-left">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: Purva in a black saree beneath a leafy green tree">
+            <img src="image/Screenshot 2026-11-06 191207.png" alt="Purva in a black saree beneath a leafy green tree" loading="lazy">
+          </button>
+          <figcaption>Elegance in the shade</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--tilt-right">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: Purva in a grey dress surrounded by lush green plants">
+            <img src="image/Screenshot 2026-11-06 191303.png" alt="Purva in a grey dress surrounded by lush green plants" loading="lazy">
+          </button>
+          <figcaption>Among the green</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--tilt-left">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: Purva wearing an emerald green saree">
+            <img src="image/Screenshot 2026-11-06 191412.png" alt="Purva wearing an emerald green saree" loading="lazy">
+          </button>
+          <figcaption>Emerald-day glow</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--tilt-right">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: The pink arches of Hawa Mahal in Jaipur">
+            <img src="image/Screenshot 2026-11-06 191521.png" alt="The pink arches of Hawa Mahal in Jaipur" loading="lazy">
+          </button>
+          <figcaption>A day by the Hawa Mahal</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--tilt-right">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: Purva in a colorful traditional lehenga">
+            <img src="image/Screenshot 2026-11-06 192505.png" alt="Purva in a colorful traditional lehenga" loading="lazy">
+          </button>
+          <figcaption>Festive and radiant</figcaption>
+        </figure>
+        <figure class="polaroid polaroid--tilt-left">
+          <button class="polaroid__photo" type="button" aria-label="Enlarge photo: Purva in a white floral kurti outdoors among green foliage">
+            <img src="image/Screenshot 2026-11-06 192624.png" alt="Purva in a white floral kurti outdoors among green foliage" loading="lazy">
+          </button>
+          <figcaption>Sunshine and wildflowers</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section gifts-section" id="gifts" aria-labelledby="gifts-title">
+      <p class="eyebrow">A few things from your unofficial birthday fairy</p>
+      <h2 class="section-title" id="gifts-title">Pick a little present.</h2>
+      <p class="section-copy">Tap a box and see what you’ve got. No returns, obviously.</p>
+      <div class="gift-grid">
+        <article class="gift-card">
+          <button class="gift" type="button" aria-expanded="false" aria-controls="gift-message-1">
+            <span class="gift__emoji" aria-hidden="true">🎁</span>
+            <span class="gift__ribbon" aria-hidden="true"></span>
+            <span class="gift__prompt">Open gift one</span>
+          </button>
+          <p class="gift__message" id="gift-message-1" hidden>Infinite happiness—and permission to take the biggest slice. ✨</p>
+        </article>
+        <article class="gift-card">
+          <button class="gift" type="button" aria-expanded="false" aria-controls="gift-message-2">
+            <span class="gift__emoji" aria-hidden="true">🎁</span>
+            <span class="gift__ribbon" aria-hidden="true"></span>
+            <span class="gift__prompt">Open gift two</span>
+          </button>
+          <p class="gift__message" id="gift-message-2" hidden>Unstoppable success, brave new adventures, and someone cheering you on at every step. 🌟</p>
+        </article>
+        <article class="gift-card">
+          <button class="gift" type="button" aria-expanded="false" aria-controls="gift-message-3">
+            <span class="gift__emoji" aria-hidden="true">🎁</span>
+            <span class="gift__ribbon" aria-hidden="true"></span>
+            <span class="gift__prompt">Open gift three</span>
+          </button>
+          <p class="gift__message" id="gift-message-3" hidden>Gift 3: An ice cream treat on me! You pick the flavor, catching up is my treat. 🍦</p>
+        </article>
+      </div>
+      <p class="gift-status" id="gift-status" aria-live="polite"></p>
+    </section>
+
+    <section class="story-section letter-section" id="letter" aria-labelledby="letter-section-title">
+      <span class="letter-section__flower" aria-hidden="true">✿</span>
+      <p class="eyebrow">One last thing</p>
+      <h2 class="section-title" id="letter-section-title">A little note for later.</h2>
+      <p class="section-copy">Something to read when you’ve finished the cake (or before, no rules here).</p>
+      <button class="button button--primary" id="read-letter" type="button">Read your letter <span aria-hidden="true">✉</span></button>
+    </section>
+
+    <footer class="story-footer">
+      <p>That’s the whole birthday briefing.</p>
+      <span>Have the best day, Purva. Go get yourself something good to eat. ✨</span>
+    </footer>
+  </main>
+
+  <div class="lightbox" id="photo-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" aria-hidden="true" hidden>
+    <button class="lightbox__close" id="lightbox-close" type="button" aria-label="Close enlarged photo">×</button>
+    <img class="lightbox__image" id="lightbox-image" alt="">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+
+  <dialog class="letter-modal" id="letter-modal" aria-labelledby="letter-modal-title">
+    <button class="letter-modal__close" id="letter-close" type="button" aria-label="Close birthday letter">×</button>
+    <article class="letter-paper">
+      <span class="letter-paper__stamp" aria-hidden="true">For<br>Purva</span>
+      <p class="eyebrow">A note from Piyush</p>
+      <h2 id="letter-modal-title">Hey Purva,</h2>
+      <p>Happy birthday to my favorite partner-in-crime. Hope this year brings you all the good food, fun plans, zero stress, and plenty of reasons to laugh until your cheeks hurt.</p>
+      <p>Thanks for all the random chats, the ridiculous stories, and being such a reliably fun person to have around. Whatever this year brings, you know I’m always up for a catch-up, a pep talk, or helping you find the best thing on the menu.</p>
+      <p>Have an excellent day, eat something delicious, and make sure you save me a bite of cake. That part is non-negotiable.</p>
+      <p class="letter-paper__signoff">Cheers to good times and great food,<br><strong>Piyush ✌️</strong></p>
+    </article>
+  </dialog>
+
+  <div class="sr-only" id="page-status" aria-live="polite"></div>
+</body>
+</html>
